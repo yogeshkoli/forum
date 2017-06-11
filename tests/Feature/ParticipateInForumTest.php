@@ -14,7 +14,7 @@ class ParticipateInForumTest extends TestCase
     /** @test */
     public function unauthenticated_users_may_not_add_replies()
     {
-        $this->post('threads/1/replies', []);
+        $this->post('threads/some-channel/1/replies', []);
     }
 
     /** @test */
