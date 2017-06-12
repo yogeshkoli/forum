@@ -4,7 +4,7 @@
 
 ## Channels
 
- - channels cna have threads associated
+ - channels can have threads associated
 
 ## Threads
 
