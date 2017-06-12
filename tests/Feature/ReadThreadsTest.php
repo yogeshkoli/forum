@@ -42,4 +42,17 @@ class ReadThreadsTest extends TestCase
             ->assertSee($reply->body);
         // Then we should see the replies
     }
+
+    /** @test */
+    public function a_user_can_filter_thread_according_to_a_slug()
+    {
+        $channel = create('App\Channel');
+        $threadInChannel = create('App\Thread', ['channel_id' => $channel->id]);
+        $threadNotInChannel = create('App\Thread');
+
+        $this->get('/threads/' . $channel->slug)
+            ->assertSee($threadInChannel->title)
+            ->assertDontSee($threadNotInChannel->title);
+    }
+
 }

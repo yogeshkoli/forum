@@ -10,4 +10,5 @@ Route::get('threads/{channel}/{thread}', 'ThreadsController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('threads/{channel}', 'ThreadsController@index');
 Route::post('/threads/{channel}/{thread}/replies', 'RepliesController@store');
